@@ -1,11 +1,14 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			//Your data structures, A.K.A Entities
+			listContacts: []
 		},
 		actions: {
-			//(Arrow) Functions that update the Store
-            // Remember to use the scope: scope.state.store & scope.setState()
+			setListContacts: list => {
+				var tempStore = getStore();
+				tempStore.listContacts = list;
+				setStore({ tempStore });
+			}
 		}
 	};
 };
